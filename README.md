@@ -11,8 +11,7 @@ design-space exploration (DSE).
 > optional convenience and is still evolving; for artifact evaluation we
 > recommend the standard steps below (Section 2) to reproduce the paper's
 > results.
-
-![VoxelSim Workbench — Pareto explorer](web_profiler/webui.png)
+> ![VoxelSim Workbench — Pareto explorer](web_profiler/webui.png)
 
 ---
 
