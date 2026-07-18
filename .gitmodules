@@ -1,0 +1,8 @@
+[submodule "external/dsent0.91"]
+	path = external/dsent0.91
+	url = https://github.com/zzcnb1/dsent0.91.git
+	ignore = dirty
+[submodule "external/vnoc20"]
+	path = external/vnoc20
+	url = https://github.com/eigenpi/vnoc20.git
+	ignore = dirty

@@ -1,0 +1,17 @@
+profiler_version: "3d-stack-generated"
+vllm_version: "unknown"
+gpu: "servingsim_fixed_sa_32_vu_32_drambw_12288_noc_1_32_row_8192"
+profiled_at: "2026-06-13T15:22:25.347006"
+engine_effective:
+  max_num_batched_tokens: 2048
+  max_num_seqs: 128
+  dtype: bfloat16
+  kv_cache_dtype: auto
+attention_grid:
+  chunks: "0, 128, 256, 512, 1024, 2048"
+  n_decode: "0, 8, 16, 32, 64, 128"
+  kv: "0, 128, 256, 512, 1024, 2048"
+source:
+  model: llama2-13
+  simulator: 3D-Stack
+  time_unit: microseconds

@@ -1,0 +1,6 @@
+layer,sequences,time_us
+lm_head,8,26.870000
+lm_head,16,26.254000
+lm_head,32,26.130000
+lm_head,64,28.972000
+lm_head,128,54.944000

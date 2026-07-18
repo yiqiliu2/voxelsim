@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="880" viewBox="0 0 1280 880">
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #182026; }
+      .title { font-size: 26px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #4a5964; }
+      .label { font-size: 15px; font-weight: 700; }
+      .small { font-size: 12px; fill: #34424c; }
+      .tiny { font-size: 10px; fill: #34424c; }
+      .note { font-size: 13px; fill: #52616b; }
+      .die { fill: #f7f9fa; stroke: #24313a; stroke-width: 2; }
+      .pc0 { fill: #d7edf2; }
+      .pc1 { fill: #e6f3d2; }
+      .pc2 { fill: #f6e7bf; }
+      .pc3 { fill: #e8dff4; }
+      .bank { fill: rgba(255,255,255,0.55); stroke: #52616b; stroke-width: 0.8; }
+      .edge { fill: #e9edf0; stroke: #8a98a3; stroke-width: 1; }
+      .tsv { fill: #2b6f8a; opacity: 0.8; }
+      .heat { fill: #c94932; opacity: 0.82; }
+      .layer { fill: #f4f6f7; stroke: #38454f; stroke-width: 1.6; }
+      .underfill { fill: #f2c879; stroke: #9b7233; stroke-width: 1.4; }
+      .silicon { fill: #b9d5df; stroke: #34515c; stroke-width: 1.4; }
+      .arrow { stroke: #4a5964; stroke-width: 2; marker-end: url(#arrowhead); fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5964"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="880" fill="#ffffff"/>
+  <text x="52" y="48" class="title">Conceptual HBM-Style DRAM Die Floorplan for Thermal Mapping</text>
+  <text x="52" y="75" class="subtitle">Public specs expose channels/pseudochannels and banks, not vendor-private bank XY placement. This is a defensible modeling abstraction.</text>
+
+  <!-- Top-down die floorplan -->
+  <text x="52" y="122" class="label">Top view of one DRAM die layer</text>
+  <text x="52" y="146" class="subtitle">16 pseudochannel / vault regions; banks are modeled as subtiles inside each region.</text>
+  <rect x="52" y="170" width="560" height="560" rx="4" class="die"/>
+
+  <!-- edge periphery -->
+  <rect x="52" y="170" width="560" height="36" class="edge"/>
+  <rect x="52" y="694" width="560" height="36" class="edge"/>
+  <rect x="52" y="170" width="36" height="560" class="edge"/>
+  <rect x="576" y="170" width="36" height="560" class="edge"/>
+  <text x="238" y="194" class="small">command / row / column / refresh periphery</text>
+  <text x="230" y="718" class="small">I/O and TSV landing periphery</text>
+  <text x="-640" y="76" transform="rotate(-90)" class="small">edge logic</text>
+  <text x="-638" y="602" transform="rotate(-90)" class="small">edge logic</text>
+
+  <!-- 4x4 pseudochannel grid, active area x=88 y=206 size=488 cell=122 -->
+  <g transform="translate(88,206)">
+    <!-- rows -->
+    <g>
+      <rect x="0" y="0" width="122" height="122" class="pc0" stroke="#52616b"/>
+      <rect x="122" y="0" width="122" height="122" class="pc1" stroke="#52616b"/>
+      <rect x="244" y="0" width="122" height="122" class="pc2" stroke="#52616b"/>
+      <rect x="366" y="0" width="122" height="122" class="pc3" stroke="#52616b"/>
+      <rect x="0" y="122" width="122" height="122" class="pc3" stroke="#52616b"/>
+      <rect x="122" y="122" width="122" height="122" class="pc2" stroke="#52616b"/>
+      <rect x="244" y="122" width="122" height="122" class="pc1" stroke="#52616b"/>
+      <rect x="366" y="122" width="122" height="122" class="pc0" stroke="#52616b"/>
+      <rect x="0" y="244" width="122" height="122" class="pc0" stroke="#52616b"/>
+      <rect x="122" y="244" width="122" height="122" class="pc1" stroke="#52616b"/>
+      <rect x="244" y="244" width="122" height="122" class="pc2" stroke="#52616b"/>
+      <rect x="366" y="244" width="122" height="122" class="pc3" stroke="#52616b"/>
+      <rect x="0" y="366" width="122" height="122" class="pc3" stroke="#52616b"/>
+      <rect x="122" y="366" width="122" height="122" class="pc2" stroke="#52616b"/>
+      <rect x="244" y="366" width="122" height="122" class="pc1" stroke="#52616b"/>
+      <rect x="366" y="366" width="122" height="122" class="pc0" stroke="#52616b"/>
+    </g>
+
+    <!-- bank subtiles and labels -->
+    <g>
+      <script type="application/ecmascript"><![CDATA[]]></script>
+      <!-- manually draw 4 banks per pseudochannel tile -->
+      <g id="banks">
+        <rect x="8" y="32" width="49" height="35" class="bank"/><rect x="65" y="32" width="49" height="35" class="bank"/><rect x="8" y="75" width="49" height="35" class="bank"/><rect x="65" y="75" width="49" height="35" class="bank"/>
+        <rect x="130" y="32" width="49" height="35" class="bank"/><rect x="187" y="32" width="49" height="35" class="bank"/><rect x="130" y="75" width="49" height="35" class="bank"/><rect x="187" y="75" width="49" height="35" class="bank"/>
+        <rect x="252" y="32" width="49" height="35" class="bank"/><rect x="309" y="32" width="49" height="35" class="bank"/><rect x="252" y="75" width="49" height="35" class="bank"/><rect x="309" y="75" width="49" height="35" class="bank"/>
+        <rect x="374" y="32" width="49" height="35" class="bank"/><rect x="431" y="32" width="49" height="35" class="bank"/><rect x="374" y="75" width="49" height="35" class="bank"/><rect x="431" y="75" width="49" height="35" class="bank"/>
+
+        <rect x="8" y="154" width="49" height="35" class="bank"/><rect x="65" y="154" width="49" height="35" class="bank"/><rect x="8" y="197" width="49" height="35" class="bank"/><rect x="65" y="197" width="49" height="35" class="bank"/>
+        <rect x="130" y="154" width="49" height="35" class="bank"/><rect x="187" y="154" width="49" height="35" class="bank"/><rect x="130" y="197" width="49" height="35" class="bank"/><rect x="187" y="197" width="49" height="35" class="bank"/>
+        <rect x="252" y="154" width="49" height="35" class="bank"/><rect x="309" y="154" width="49" height="35" class="bank"/><rect x="252" y="197" width="49" height="35" class="bank"/><rect x="309" y="197" width="49" height="35" class="bank"/>
+        <rect x="374" y="154" width="49" height="35" class="bank"/><rect x="431" y="154" width="49" height="35" class="bank"/><rect x="374" y="197" width="49" height="35" class="bank"/><rect x="431" y="197" width="49" height="35" class="bank"/>
+
+        <rect x="8" y="276" width="49" height="35" class="bank"/><rect x="65" y="276" width="49" height="35" class="bank"/><rect x="8" y="319" width="49" height="35" class="bank"/><rect x="65" y="319" width="49" height="35" class="bank"/>
+        <rect x="130" y="276" width="49" height="35" class="bank"/><rect x="187" y="276" width="49" height="35" class="bank"/><rect x="130" y="319" width="49" height="35" class="bank"/><rect x="187" y="319" width="49" height="35" class="bank"/>
+        <rect x="252" y="276" width="49" height="35" class="bank"/><rect x="309" y="276" width="49" height="35" class="bank"/><rect x="252" y="319" width="49" height="35" class="bank"/><rect x="309" y="319" width="49" height="35" class="bank"/>
+        <rect x="374" y="276" width="49" height="35" class="bank"/><rect x="431" y="276" width="49" height="35" class="bank"/><rect x="374" y="319" width="49" height="35" class="bank"/><rect x="431" y="319" width="49" height="35" class="bank"/>
+
+        <rect x="8" y="398" width="49" height="35" class="bank"/><rect x="65" y="398" width="49" height="35" class="bank"/><rect x="8" y="441" width="49" height="35" class="bank"/><rect x="65" y="441" width="49" height="35" class="bank"/>
+        <rect x="130" y="398" width="49" height="35" class="bank"/><rect x="187" y="398" width="49" height="35" class="bank"/><rect x="130" y="441" width="49" height="35" class="bank"/><rect x="187" y="441" width="49" height="35" class="bank"/>
+        <rect x="252" y="398" width="49" height="35" class="bank"/><rect x="309" y="398" width="49" height="35" class="bank"/><rect x="252" y="441" width="49" height="35" class="bank"/><rect x="309" y="441" width="49" height="35" class="bank"/>
+        <rect x="374" y="398" width="49" height="35" class="bank"/><rect x="431" y="398" width="49" height="35" class="bank"/><rect x="374" y="441" width="49" height="35" class="bank"/><rect x="431" y="441" width="49" height="35" class="bank"/>
+      </g>
+
+      <!-- pseudochannel labels -->
+      <text x="12" y="22" class="label">PC00</text><text x="134" y="22" class="label">PC01</text><text x="256" y="22" class="label">PC02</text><text x="378" y="22" class="label">PC03</text>
+      <text x="12" y="144" class="label">PC07</text><text x="134" y="144" class="label">PC06</text><text x="256" y="144" class="label">PC05</text><text x="378" y="144" class="label">PC04</text>
+      <text x="12" y="266" class="label">PC08</text><text x="134" y="266" class="label">PC09</text><text x="256" y="266" class="label">PC10</text><text x="378" y="266" class="label">PC11</text>
+      <text x="12" y="388" class="label">PC15</text><text x="134" y="388" class="label">PC14</text><text x="256" y="388" class="label">PC13</text><text x="378" y="388" class="label">PC12</text>
+
+      <text x="18" y="54" class="tiny">B0</text><text x="75" y="54" class="tiny">B1</text><text x="18" y="97" class="tiny">B2</text><text x="75" y="97" class="tiny">B3</text>
+      <circle cx="61" cy="61" r="4" class="tsv"/><circle cx="183" cy="61" r="4" class="tsv"/><circle cx="305" cy="61" r="4" class="tsv"/><circle cx="427" cy="61" r="4" class="tsv"/>
+      <circle cx="61" cy="183" r="4" class="tsv"/><circle cx="183" cy="183" r="4" class="tsv"/><circle cx="305" cy="183" r="4" class="tsv"/><circle cx="427" cy="183" r="4" class="tsv"/>
+      <circle cx="61" cy="305" r="4" class="tsv"/><circle cx="183" cy="305" r="4" class="tsv"/><circle cx="305" cy="305" r="4" class="tsv"/><circle cx="427" cy="305" r="4" class="tsv"/>
+      <circle cx="61" cy="427" r="4" class="tsv"/><circle cx="183" cy="427" r="4" class="tsv"/><circle cx="305" cy="427" r="4" class="tsv"/><circle cx="427" cy="427" r="4" class="tsv"/>
+    </g>
+  </g>
+
+  <rect x="112" y="752" width="16" height="16" class="tsv"/><text x="136" y="765" class="note">TSV/microbump landing region, repeated at same XY on each DRAM layer</text>
+  <rect x="402" y="752" width="16" height="16" class="bank"/><text x="426" y="765" class="note">Bank/subarray thermal subtile</text>
+
+  <!-- Stack side view -->
+  <text x="700" y="122" class="label">Side view: repeated DRAM die floorplans</text>
+  <text x="700" y="146" class="subtitle">Same pseudochannel XY coordinates on every DRAM die; bond layers sit between silicon dies.</text>
+
+  <g transform="translate(720,185)">
+    <polygon points="0,0 390,0 430,28 40,28" class="silicon"/>
+    <text x="16" y="19" class="small">DRAM die 7: same 4 x 4 pseudochannel floorplan</text>
+    <polygon points="22,38 412,38 430,50 40,50" class="underfill"/>
+    <text x="46" y="48" class="tiny">microbump + underfill bond</text>
+    <polygon points="0,64 390,64 430,92 40,92" class="silicon"/>
+    <text x="16" y="83" class="small">DRAM die 6</text>
+    <polygon points="22,102 412,102 430,114 40,114" class="underfill"/>
+    <polygon points="0,128 390,128 430,156 40,156" class="silicon"/>
+    <text x="16" y="147" class="small">DRAM die 5</text>
+    <polygon points="22,166 412,166 430,178 40,178" class="underfill"/>
+    <polygon points="0,192 390,192 430,220 40,220" class="silicon"/>
+    <text x="16" y="211" class="small">DRAM die 4</text>
+    <polygon points="22,230 412,230 430,242 40,242" class="underfill"/>
+    <polygon points="0,256 390,256 430,284 40,284" class="silicon"/>
+    <text x="16" y="275" class="small">DRAM die 3</text>
+    <polygon points="22,294 412,294 430,306 40,306" class="underfill"/>
+    <polygon points="0,320 390,320 430,348 40,348" class="silicon"/>
+    <text x="16" y="339" class="small">DRAM die 2</text>
+    <polygon points="22,358 412,358 430,370 40,370" class="underfill"/>
+    <polygon points="0,384 390,384 430,412 40,412" class="silicon"/>
+    <text x="16" y="403" class="small">DRAM die 1</text>
+    <polygon points="22,422 412,422 430,434 40,434" class="underfill"/>
+    <polygon points="0,448 390,448 430,476 40,476" class="silicon"/>
+    <text x="16" y="467" class="small">DRAM die 0</text>
+    <polygon points="22,486 412,486 430,500 40,500" class="underfill"/>
+    <text x="46" y="497" class="tiny">logic-to-HBM effective bond layer</text>
+    <polygon points="0,516 390,516 430,548 40,548" fill="#d7dbe8" stroke="#3f4658" stroke-width="1.4"/>
+    <text x="16" y="538" class="small">underlying logic / base die in our 3D model</text>
+
+    <line x1="462" y1="8" x2="462" y2="460" class="arrow"/>
+    <text x="480" y="240" class="small" transform="rotate(90 480,240)">vertical heat and TSV direction</text>
+  </g>
+
+  <!-- Zoom tile -->
+  <text x="700" y="748" class="label">Zoom: one pseudochannel tile</text>
+  <rect x="700" y="770" width="72" height="48" class="bank"/><text x="716" y="798" class="small">B0</text>
+  <rect x="782" y="770" width="72" height="48" class="bank"/><text x="798" y="798" class="small">B1</text>
+  <rect x="700" y="826" width="72" height="48" class="bank"/><text x="716" y="854" class="small">B2</text>
+  <rect x="782" y="826" width="72" height="48" class="bank"/><text x="798" y="854" class="small">B3</text>
+  <circle cx="878" cy="792" r="5" class="tsv"/><circle cx="878" cy="824" r="5" class="tsv"/><circle cx="878" cy="856" r="5" class="tsv"/>
+  <text x="898" y="797" class="note">TSV / microbump columns</text>
+  <text x="898" y="822" class="note">carry data, command/address, power/ground</text>
+  <text x="898" y="852" class="note">exact bank XY is vendor-private; this is a thermal proxy</text>
+</svg>

@@ -1,0 +1,17 @@
+[
+    [
+        1,
+        " - einstein_v2(\" output0[B0, N, M] +=! input0[B0, N, K] * input1[B0, K, M]; \", input_dict={ \"input0\" : { \"dtype\" : \"float32\", \"shape\" : [3960, 66, 128]} ,  \"input1\" : { \"dtype\" : \"float32\", \"shape\" : [3960, 128, 66]} })  ",
+        "BatchMatMul",
+        [
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+    ]
+]

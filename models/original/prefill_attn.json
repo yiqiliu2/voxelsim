@@ -1,0 +1,17 @@
+[
+  [
+    1,
+    " - einstein_v2(\" output0[S0, N, M] +=! input0[S0, N, K] * input1[K, M]; \", input_dict={ \"input0\" : { \"dtype\" : \"float32\", \"shape\" : [99, 66, 5120]} ,  \"input1\" : { \"dtype\" : \"float32\", \"shape\" : [5120, 20480]} })  ",
+    "Dot",
+    [
+      [
+        3,
+        0
+      ],
+      [
+        2,
+        0
+      ]
+    ]
+  ]
+]

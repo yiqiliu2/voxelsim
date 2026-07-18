@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoxelSim Workbench</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧊</text></svg>">
+</head>
+<body>
+<div id="app">
+  <!-- ======================= Sidebar ======================= -->
+  <aside id="sidebar">
+    <div class="brand">
+      <div class="brand-logo"><span>V<sup>3</sup></span></div>
+      <div class="brand-text">
+        <div class="brand-name">VoxelSim</div>
+        <div class="brand-sub">Workbench</div>
+      </div>
+    </div>
+    <nav id="nav">
+      <div class="nav-section" data-i18n="Analysis">Analysis</div>
+      <a class="nav-item" href="#/dashboard" data-route="dashboard"><i>◈</i><span data-i18n="Dashboard">Dashboard</span></a>
+      <a class="nav-item" href="#/results" data-route="results"><i>▤</i><span data-i18n="Results">Results</span></a>
+      <a class="nav-item" href="#/compare" data-route="compare"><i>⚖</i><span data-i18n="Compare">Compare</span></a>
+      <a class="nav-item" href="#/sweep" data-route="sweep"><i>∿</i><span data-i18n="Sweep">Sweep</span></a>
+      <a class="nav-item" href="#/paper" data-route="paper"><i>❖</i><span data-i18n="Paper Figures">Paper Figures</span></a>
+      <a class="nav-item" href="#/pareto" data-route="pareto"><i>◭</i><span data-i18n="Pareto">Pareto</span></a>
+      <div class="nav-section" data-i18n="Experiment">Experiment</div>
+      <a class="nav-item" href="#/run" data-route="run"><i>▶</i><span data-i18n="Run">Run</span></a>
+      <a class="nav-item" href="#/jobs" data-route="jobs"><i>☰</i><span data-i18n="Jobs">Jobs</span><b class="nav-badge" id="jobs-badge" hidden></b></a>
+      <div class="nav-section" data-i18n="Library">Library</div>
+      <a class="nav-item" href="#/hwconfigs" data-route="hwconfigs"><i>⚙</i><span data-i18n="HW Configs">HW Configs</span></a>
+      <a class="nav-item" href="#/models" data-route="models"><i>⬡</i><span data-i18n="Model Library">Models</span></a>
+      <a class="nav-item" href="#/noc" data-route="noc"><i>✦</i><span data-i18n="NoC Topology">NoC Topology</span></a>
+      <a class="nav-item" href="#/serving" data-route="serving"><i>◍</i><span data-i18n="LLM Serving">LLM Serving</span></a>
+      <div class="nav-section" data-i18n="System">System</div>
+      <a class="nav-item" href="#/logs" data-route="logs"><i>≣</i><span data-i18n="Logs">Logs</span></a>
+      <a class="nav-item" href="#/system" data-route="system"><i>♥</i><span data-i18n="Monitor">Monitor</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="pulse-dot" id="sys-dot" data-i18n-title="System status" title="System status"></div>
+      <span id="sys-summary">—</span>
+    </div>
+  </aside>
+
+  <!-- ======================= Main ======================= -->
+  <div id="main">
+    <header id="topbar">
+      <div class="topbar-left">
+        <h1 id="page-title">Dashboard</h1>
+        <div id="page-crumb" class="crumb"></div>
+      </div>
+      <div class="topbar-right">
+        <div class="seg lang-switch" id="lang-switch" data-i18n-title="Language / 语言" title="Language / 语言">
+          <span class="seg-opt" data-lang="en">EN</span>
+          <span class="seg-opt" data-lang="zh">中文</span>
+        </div>
+        <div id="topbar-actions"></div>
+      </div>
+    </header>
+    <main id="page" class="page-enter"></main>
+  </div>
+</div>
+
+<div id="toast-root"></div>
+<div id="modal-root"></div>
+
+<script src="{{ url_for('static', filename='vendor/plotly-2.35.2.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/i18n.js') }}"></script>
+<script src="{{ url_for('static', filename='js/core.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/dashboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/results.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/result_detail.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/compare.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/sweep.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/paper.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/pareto.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/run.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/jobs.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/hwconfigs.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/models.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/noc.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/serving.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/logs.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pages/system.js') }}"></script>
+<script>App.boot();</script>
+</body>
+</html>
