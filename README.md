@@ -1,6 +1,6 @@
 # VoxelSim — Artifact Evaluation Guide
 
-Reproduces key experiments in the paper (Figures 8, 10–13, 15, 17–20).  Covers environment
+Reproduces key experiments in the [paper](https://arxiv.org/abs/2604.26821) (Figures 8, 10–13, 15, 17–20).  Covers environment
 setup, simulation data generation, figure plotting, and the Pareto-frontier
 design-space exploration (DSE).
 
