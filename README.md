@@ -47,7 +47,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Packages: `numpy==1.26.4`, `ujson`, `scikit-learn`, `scipy`, `linear-tree`, `matplotlib`
+Packages: `numpy==1.26.4`, `ujson`, `scikit-learn`, `scipy`, `linear-tree`, `matplotlib`, etc.
 
 ### 1.4 External Backends (Optional)
 
